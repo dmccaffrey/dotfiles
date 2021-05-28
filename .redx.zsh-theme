@@ -3,8 +3,8 @@
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[white]%}⦗%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[white]⦘%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="○"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}⬢ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="⬡ "
 
 # Customized git status, oh-my-zsh currently does not allow render dirty status before branch
 git_custom_status() {
@@ -17,4 +17,4 @@ ${ZSH_THEME_GIT_PROMPT_PREFIX}${branch}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
 
 # Combine it all into a final right-side prompt
 RPS1="\$(git_custom_status)${RPS1:+ $RPS1}"
-PROMPT='%{$fg[white]%}⦗%{$fg[cyan]%}%~% %{$fg[white]%}⦘» '
+PROMPT='%{$fg[white]%}⦗%{$fg[yellow]%}%~% %{$fg[white]%}⦘%(?.%{$fg[red]%}☈.☇)%{$reset_color%} '
